@@ -7,7 +7,7 @@ rotors = {
         'wiring': 'AJDKSIRUXBLHWTMCQGZNPYFVOE',
         'turnover': 'E' # If rotor steps from E to F, the next rotor is advanced
     }, 
-    'II': {
+    'III': {
         'wiring': 'BDFHJLCPRTXVZNYEIWGAKMUSQO',
         'turnover': 'V' # 	If rotor steps from V to W, the next rotor is advanced
     }, 
@@ -32,3 +32,29 @@ rotors = {
         'turnover': 'ZM' # 	If rotor steps from Z to A, or from M to N the next rotor is advanced
     }
 }
+
+reflectors = {
+    'UKW-A': 'EJMZALYXVBWFCRQUONTSPIKHGD', 
+    'UKW-B': 'YRUHQSLDPXNGOKMIEBFZCWVJAT', 
+    'UKW-C': 'FVPJIAOYEDRZXWGCTKUQSBNMHL'
+}
+
+class Plugboard():
+    def __init__(self, pairs):
+        self.pairs = {}
+
+        if pairs != None:
+            for pair in pairs:
+                self.pairs[pair[0]] = pair[1]
+                self.pairs[pair[1]] = pair[0]
+
+class Rotor():
+    def __init__(self, rotor_number, starting_position, next_forward = None, next_backward = None):
+        self.wiring = rotors[rotor_number]['wiring']
+        self.turnover = rotors[rotor_number]['turnover']
+        self.next_forward = next_forward
+        self.next_backward = next_backward
+
+class Reflector():
+    def __init__(self, reflector_model):
+        self.wiring = reflectors[reflector_model]
