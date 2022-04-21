@@ -1,4 +1,3 @@
-from tracemalloc import start
 from components import Plugboard, Rotor, Reflector
 
 class Machine():
