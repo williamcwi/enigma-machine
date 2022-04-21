@@ -52,6 +52,7 @@ class Rotor():
     def __init__(self, rotor_number, starting_position, next_forward = None, next_backward = None):
         self.wiring = rotors[rotor_number]['wiring']
         self.turnover = rotors[rotor_number]['turnover']
+        self.starting_position = starting_position
         self.next_forward = next_forward
         self.next_backward = next_backward
 
