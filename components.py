@@ -66,12 +66,24 @@ class Rotor():
         self.next_forward = next_forward
         self.next_backward = next_backward
 
+        # get index of starting position
+        self.position_index = alphabet.index(self.starting_position)
+
         self.forward = {}
         self.backward = {}
 
         for start, end in zip(alphabet, self.wiring):
             self.forward[start] = end
             self.backward[end] = start
+
+    def step(self):
+        if self.next_forward and self.starting_position == self.turnover:
+            self.next_forward.step()
+        # increase position index by 1
+        self.position_index = (self.position_index + 1) % 26
+        # get new starting position
+        self.starting_position = alphabet[self.position_index]
+
 
 class Reflector():
     def __init__(self, reflector_model):
