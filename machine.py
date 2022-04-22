@@ -1,4 +1,5 @@
 from components import Plugboard, Rotor, Reflector
+import re
 
 class Machine():
     def __init__(self, pairs = None, rotors = ['I', 'II', 'III'], starting_position = 'AAA', reflector_model = 'UKW-B'):
@@ -65,3 +66,27 @@ class Machine():
             return None
 
         self.reflector = Reflector(self.reflector_model)
+
+    def encode(self, message):
+        encoded_message = ''
+
+        message = re.sub('[^a-zA-Z]+', '', message.upper())
+        for char in message:
+            encoded_message += self.encode_letter(char)
+
+        return encoded_message
+
+    def encode_letter(self, char):
+        # plugboard
+
+        # step right rotor
+
+        # rotor right -> middle -> left
+
+        # reflector
+
+        # rotor back left -> middle -> right
+
+        # plugboard
+        
+        return char
