@@ -1,3 +1,4 @@
+from platform import machine
 from components import Plugboard, Rotor, Reflector
 import re
 
@@ -86,6 +87,7 @@ class Machine():
         # rotor right -> middle -> left
 
         # reflector
+        char = self.reflector.wiring[char]
 
         # rotor back left -> middle -> right
 

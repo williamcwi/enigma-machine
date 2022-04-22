@@ -87,4 +87,6 @@ class Rotor():
 
 class Reflector():
     def __init__(self, reflector_model):
-        self.wiring = reflectors[reflector_model]
+        self.wiring = {}
+        for start, end in zip(alphabet, reflectors[reflector_model]):
+            self.wiring[start] = end
