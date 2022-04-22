@@ -67,6 +67,9 @@ class Machine():
             return None
 
         self.reflector = Reflector(self.reflector_model)
+    
+    def set_plugboard_pairs(self, pairs):
+        self.plugboard = Plugboard(pairs)
 
     def encode(self, message):
         encoded_message = ''
