@@ -84,6 +84,15 @@ class Rotor():
         # get new starting position
         self.starting_position = alphabet[self.position_index]
 
+    def encode(self, char, direction):
+        # offset by starting position
+
+        # encode forward/backward
+
+        # if next_forward/backward
+        #     self.next_forward/backward.encode()
+
+        return char
 
 class Reflector():
     def __init__(self, reflector_model):
