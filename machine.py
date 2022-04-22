@@ -78,6 +78,8 @@ class Machine():
 
     def encode_letter(self, char):
         # plugboard
+        if char in self.plugboard.pairs:
+            char = self.plugboard.pairs[char]
 
         # step right rotor
 
@@ -88,5 +90,7 @@ class Machine():
         # rotor back left -> middle -> right
 
         # plugboard
+        if char in self.plugboard.pairs:
+            char = self.plugboard.pairs[char]
         
         return char
