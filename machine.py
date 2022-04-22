@@ -90,6 +90,7 @@ class Machine():
             char = self.plugboard.pairs[char]
 
         # step right rotor
+        self.right_rotor.step()
 
         # rotor right -> middle -> left
 
